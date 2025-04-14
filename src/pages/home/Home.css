@@ -1,0 +1,13 @@
+body {
+    /* margin: 0;
+    padding: 0;
+    height: 100%; */
+    background-color: black;
+
+}
+
+.responsive-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
