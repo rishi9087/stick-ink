@@ -13,164 +13,171 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { useNavigate } from 'react-router-dom';
+import { Login } from '@mui/icons-material';
 
 const pages = ['Catalogue', 'About us', `FAQ's`, 'Gallery'];
 
 function Navbar() {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-    const handleMobileMenuOpen = (event) => {
-        setMobileMoreAnchorEl(event.currentTarget);
-      };
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
 
-      const handleMobileMenuClose = () => {
-        setMobileMoreAnchorEl(null);
-      };
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+
+
+  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem>
+        <IconButton><img src="/public/images/favrt.svg" alt="Logo" className="header-logo" /></IconButton>
+        <p>Favourites</p>
+      </MenuItem>
+
+      <MenuItem>
+        <IconButton><img src="/public/images/cart.svg" alt="Logo" className="header-logo" /></IconButton>
+        <p>Cart</p>
+      </MenuItem>
+
+      <MenuItem >
+        <IconButton><img src="/public/images/profile.svg" alt="Logo" className="header-logo" /></IconButton>
+        <p>Profile</p>
+      </MenuItem>
+
+    </Menu>
+  );
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
     
+    navigate(path);
+  };
 
-      const mobileMenuId = 'primary-search-account-menu-mobile';
-      const renderMobileMenu = (
-        <Menu
-          anchorEl={mobileMoreAnchorEl}
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          id={mobileMenuId}
-          keepMounted
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          open={isMobileMenuOpen}
-          onClose={handleMobileMenuClose}
-        >
-          <MenuItem>
-          <IconButton><img src="/public/images/favrt.svg" alt="Logo" className="header-logo" /></IconButton>        
-            <p>Favourites</p>
-          </MenuItem>
+  return (
+    <AppBar position="static" sx={{ bgcolor: 'black' }}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={() => handleNavigation('/')}
+            color="inherit"
+           sx={{display: { xs: 'none', md: 'flex' },}} 
+          >
 
-          <MenuItem>
-          <IconButton><img src="/public/images/cart.svg" alt="Logo" className="header-logo" /></IconButton>
-            <p>Cart</p>
-          </MenuItem>
+            <img src="/public/images/mainlogo.svg" alt="Logo" className="header-logo" />
+          </IconButton>
 
-          <MenuItem >
-          <IconButton><img src="/public/images/profile.svg" alt="Logo" className="header-logo" /></IconButton>
-            <p>Profile</p>
-          </MenuItem>
 
-        </Menu>
-      );
 
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }} >
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{ display: { xs: 'block', md: 'none' } }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu} ml={50}>
+                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
 
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            // href="#app-bar-with-responsive-menu"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+              
+            }}
+            onClick={() => handleNavigation('/')}
+          >
+            <img src="/public/images/mainlogo.svg" alt="Logo" className="header-logo" />
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, }} ml={55}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
-
-    return (
-        <AppBar position="static" sx={{ bgcolor: 'black' }}>
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="#app-bar-with-responsive-menu"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        <img src="/public/images/mainlogo.svg" alt="Logo" className="header-logo"  />
-                    </Typography>
-
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }} >
-                        <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={handleOpenNavMenu}
-                            color="inherit"
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorElNav}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
-                            open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
-                            sx={{ display: { xs: 'block', md: 'none' } }}
-                        >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu} ml={50}>
-                                    <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
-
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href="#app-bar-with-responsive-menu"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        <img src="/public/images/mainlogo.svg" alt="Logo" className="header-logo" />
-                    </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },  }} ml={55}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
-                    </Box>
-
-                    <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }, }}  >
-                        {/* <Tooltip title="Open settings">
+          <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }, }}  >
+            {/* <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
@@ -198,15 +205,15 @@ function Navbar() {
               ))}
             </Menu> */}
 
-                        <IconButton><img src="/public/images/favrt.svg" alt="Logo" className="header-logo" /></IconButton>
-                        <IconButton><img src="/public/images/cart.svg" alt="Logo" className="header-logo" /></IconButton>
-                        <IconButton><img src="/public/images/profile.svg" alt="Logo" className="header-logo" /></IconButton>
+            <IconButton><img src="/public/images/favrt.svg" alt="Logo" className="header-logo" /></IconButton>
+            <IconButton><img src="/public/images/cart.svg" alt="Logo" className="header-logo" /></IconButton>
+            <IconButton><img src="/public/images/profile.svg" alt="Logo" className="header-logo" /></IconButton>
 
 
 
-                    </Box>
+          </Box>
 
-                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="show more"
@@ -217,13 +224,13 @@ function Navbar() {
             >
               <MoreIcon />
             </IconButton>
-          </Box> 
-                </Toolbar>
+          </Box>
+        </Toolbar>
 
-                {renderMobileMenu}
-            </Container>
-        </AppBar>
-        
-    );
+        {renderMobileMenu}
+      </Container>
+    </AppBar>
+
+  );
 }
 export default Navbar;
