@@ -25,6 +25,18 @@ const Home = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+    const [showAltImage, setShowAltImage] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+
+            setShowAltImage(window.scrollY > 1000);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
 
         <>
@@ -55,6 +67,16 @@ const Home = () => {
                             />
                         </div>
 
+                        <div
+                        style={{
+                            display: 'flex',
+                            position: 'relative',
+                            top: -50,
+                            left: 100
+                        }}
+                    >
+                        <img src="/images/Group.svg" alt="Logo" width={350} className="animate-image"/>
+                    </div>
 
                     </>
 
@@ -84,12 +106,12 @@ const Home = () => {
                 </Grid>
             </Grid>
 
-            <Grid container mt={{ xs: 0, md: 0 }} spacing={10} sx={{display:'flex'}}  ml={5} >
+            <Grid container mt={{ xs: 0, md: 0 }} spacing={10} sx={{ display: 'flex' }} ml={5} >
                 <Grid size={{ xs: 10, md: 5 }} >
                     <img src="/images/car3-home.svg" alt="Logo" className="responsive-image" />
                 </Grid>
 
-                <Grid size={{ xs: 6, md: 6 }} ml={7} mt={10} sx={{maxWidth:400}}>
+                <Grid size={{ xs: 6, md: 6 }} ml={7} mt={10} sx={{ maxWidth: 400 }}>
 
                     <Typography
                         variant="h3"
@@ -98,53 +120,212 @@ const Home = () => {
                             //   letterSpacing: '.3rem',
                             color: 'white',
                             textDecoration: 'none',
-                           
+
                         }}
-                     
 
                     >
                         <span style={{ color: 'red' }}>DESIGN</span>  YOUR <br /> VEHICLE.
                     </Typography>
 
-                    <div style={{marginTop: 30}}>
-                    <Typography
-                        variant="h7"
-                        sx={{
-                            // fontWeight: 700,
-                            //   letterSpacing: '.3rem',
-                            color: 'white',
-                            textDecoration: 'none',
-                            // maxWidth: 100, 
-                            // wordWrap: 'break-word',
-                            lineHeight: 1.2
+                    <div style={{ marginTop: 30 }}>
+                        <Typography
+                            variant="h7"
+                            sx={{
+                                // fontWeight: 700,
+                                //   letterSpacing: '.3rem',
+                                color: 'white',
+                                textDecoration: 'none',
+                                // maxWidth: 100, 
+                                // wordWrap: 'break-word',
+                                lineHeight: 1.2
 
-                        }}         
-                    >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget diam.Lorem ipsum dolor
-                    </Typography>
+                            }}
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget diam.Lorem ipsum dolor
+                        </Typography>
+
                     </div>
-                   
-                   <Button sx={{
-                    // width: '100px',
-                    // padding:10,
-                    borderRadius:2,
-                    backgroundColor: 'white',
-                    padding:'7px',
-                    color:'black',
-                    marginTop: 3,
-                    fontSize:'12px',
-                    fontWeight:600,
-                     textTransform: 'none' //to avoid conversion to capital letters
-                   }}>
-                    Explore
-                   </Button>
+                    <div style={{ marginTop: 30 }}>
+                        <Typography
+                            variant="h7"
+                            sx={{
+                                // fontWeight: 700,
+                                //   letterSpacing: '.3rem',
+                                color: 'white',
+                                textDecoration: 'none',
+                                // maxWidth: 100, 
+                                // wordWrap: 'break-word',
+                                lineHeight: 1.2
+
+                            }}
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget diam.Lorem ipsum dolor
+                        </Typography>
+
+                    </div>
+
+                    <Button sx={{
+                        // width: '100px',
+                        // padding:10,
+                        borderRadius: 2,
+                        backgroundColor: 'white',
+                        padding: '7px',
+                        color: 'black',
+                        marginTop: 3,
+                        fontSize: '12px',
+                        fontWeight: 600,
+                        textTransform: 'none' //to avoid conversion to capital letters
+                    }}>
+                        Explore
+                    </Button>
                 </Grid>
             </Grid>
 
-            <Grid container mt={{ xs: -5, md: 10 }} sx={{ display:'flex', justifyContent:'center', alignItems:'center', backgroundColor:'white', padding:2}}>
+            <Grid container mt={{ xs: -5, md: 10 }} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', padding: 2 }}>
                 <Grid size={{ xs: 12, md: 8 }} >
-                    <img src={scrolled ? "/images/section3-home.svg" : "/images/car-home.svg"} alt="Logo" className="responsive-image" style={{ height: '700px' }} />
+                    <img
+                        src={showAltImage ? "/images/section4-home.svg" : "/images/section3-home.svg"}
+                        alt="Section Image"
+                        className={showAltImage ? 'slide-down' : 'section3-image'}
+                    // style={{ height: '500px', width: '1000px'}}
+                    />
                 </Grid>
+            </Grid>
+
+
+            <Grid container mt={{ xs: 0, md: 0 }} spacing={20} sx={{ display: 'flex' }} ml={5} >
+
+                <Grid size={{ xs: 6, md: 6 }} ml={7} mt={10} sx={{ maxWidth: 400 }}>
+
+                    <Typography
+                        variant="h3"
+                        sx={{
+                            fontWeight: 700,
+                            //   letterSpacing: '.3rem',
+                            color: 'white',
+                            textDecoration: 'none',
+
+                        }}
+
+
+                    >
+                        <span style={{ color: 'red' }}>WHY</span>  choose us?
+                    </Typography>
+
+                    <div style={{ marginTop: 30 }}>
+                        <Typography
+                            variant="h7"
+                            sx={{
+                                // fontWeight: 700,
+                                //   letterSpacing: '.3rem',
+                                color: 'white',
+                                textDecoration: 'none',
+                                // maxWidth: 100, 
+                                // wordWrap: 'break-word',
+                                lineHeight: 1.2
+
+                            }}
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget diam.Lorem ipsum dolor
+                        </Typography>
+                    </div>
+
+                    <div style={{ marginTop: 30 }}>
+                        <Typography
+                            variant="h7"
+                            sx={{
+                                // fontWeight: 700,
+                                //   letterSpacing: '.3rem',
+                                color: 'white',
+                                textDecoration: 'none',
+                                // maxWidth: 100, 
+                                // wordWrap: 'break-word',
+                                lineHeight: 1.2
+
+                            }}
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget diam.Lorem ipsum dolor
+                        </Typography>
+                    </div>
+
+                </Grid>
+
+                <Grid size={{ xs: 10, md: 5 }} mt={5} >
+                    <Typography
+                        variant="h5"
+                        sx={{
+                            fontWeight: 600,
+                            //   letterSpacing: '.3rem',
+                            color: 'white',
+                            textDecoration: 'none',
+                            fontStyle: 'italic'
+                        }}
+
+                    >
+                        BESPOKE SKINS BY <span style={{ color: 'red' }}>STICKINK</span>
+                    </Typography>
+                    <img src="/images/car3-home.svg" alt="Logo" className="responsive-image" />
+                </Grid>
+            </Grid>
+
+            <Grid container mt={{ xs: 0, md: 10 }} spacing={0} sx={{ display: 'flex', justifyContent:'center' }}   >
+
+                <Grid size={{ xs: 4, md: 3 }} ml={7} sx={{ backgroundColor: 'white' }} p={10} maxHeight={500} >
+                    <div
+                        style={{
+                            display: 'flex',
+                            position: 'relative',
+                            top: -50,
+                            left: 100
+                        }}
+                    >
+                        <img src="/images/stickink-logo1.svg" alt="Logo" width={350} />
+                    </div>
+
+
+                    <div style={{ marginTop: 30 }}>
+                        <Typography
+                            variant="h7"
+                            sx={{
+                                // fontWeight: 700,
+                                //   letterSpacing: '.3rem',
+                                color: 'black',
+                                textDecoration: 'none',
+                                // maxWidth: 100, 
+                                // wordWrap: 'break-word',
+                                lineHeight: 1.2
+
+                            }}
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget diam.Lorem ipsum dolor
+                        </Typography>
+
+                    </div>
+
+                </Grid>
+
+                <Grid size={{ xs: 4, md: 6 }} >
+
+                    <img
+                        src="/images/3D_13.svg"
+                        alt="3D Car"
+                    // className="section4-image"
+                    // height={480}
+                    width={500}
+                    />
+
+                </Grid>
+
+                <div
+                    style={{
+                        display: 'flex',
+                        position: 'relative',
+                        top: -70,
+                        // left: 70
+                    }}
+                >
+                    <img src="/images/Group 25.svg" alt="Logo" width={450} />
+                </div>
             </Grid>
 
         </>
