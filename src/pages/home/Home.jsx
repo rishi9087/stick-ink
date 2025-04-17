@@ -3,27 +3,42 @@ import Grid from '@mui/material/Grid';
 import './Home.css';
 import Navbar from "../../components/navbar/Navbar";
 import { useState, useEffect } from "react";
+import IconButton from '@mui/material/IconButton';
 
 const Home = () => {
 
     const [scrolled, setScrolled] = useState(false);
     const [runvideo, setRunvideo] = useState(false);
+    const [animate, setAnimate] = useState(false);
 
-    useEffect(() => {
-        const onScroll = () => {
-            setScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+        setScrolled(true);
 
+        setTimeout(() => {
             setTimeout(() => {
                 setRunvideo(true);
-                // setScrolled(false);
+
             }, 2000)
-            // if scroll more than 10px in Y axis
+            setAnimate(true);
+        }, 1000)
 
-        };
+    }
 
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+    // useEffect(() => {
+    //     const onScroll = () => {
+    //         setScrolled(window.scrollY > 10);
+
+    //         setTimeout(() => {
+    //             setRunvideo(true);
+    //             // setScrolled(false);
+    //         }, 2000)
+    //         // if scroll more than 10px in Y axis
+
+    //     };
+
+    //     window.addEventListener("scroll", onScroll);
+    //     return () => window.removeEventListener("scroll", onScroll);
+    // }, []);
 
     const [showAltImage, setShowAltImage] = useState(false);
 
@@ -67,7 +82,16 @@ const Home = () => {
                             />
                         </div>
 
-                        <div
+
+                    </>
+
+                )
+
+            }
+
+            {
+                animate && (
+                    <div
                         style={{
                             display: 'flex',
                             position: 'relative',
@@ -75,17 +99,14 @@ const Home = () => {
                             left: 100
                         }}
                     >
-                        <img src="/images/Group.svg" alt="Logo" width={350} className="animate-image"/>
+                        <img src="/images/Group.svg" alt="Logo" width={350} className="animate-image" />
                     </div>
-
-                    </>
-
-
-
-
                 )
-
             }
+
+
+
+
 
             {
                 runvideo && (
@@ -100,18 +121,27 @@ const Home = () => {
                 )
             }
 
-            <Grid container mt={{ xs: -5, md: -10 }} >
+            <Grid container mt={{ xs: -5, md: -10 }}  >
                 <Grid size={{ xs: 12, md: 12 }} >
                     <img src={scrolled ? "/images/car2-home.svg" : "/images/car-home.svg"} alt="Logo" className="responsive-image" />
                 </Grid>
+                {
+                    scrolled ? (
+                        <div></div>
+                    ) : (
+                        <IconButton onClick={handleScroll} sx={{ marginTop: -40, marginLeft: 130 }} ><img src="/images/Group 19.svg" alt="Logo" className="header-logo" width={100} /></IconButton>
+                    )
+                }
+
+
             </Grid>
 
-            <Grid container mt={{ xs: 0, md: 0 }} spacing={10} sx={{ display: 'flex' }} ml={5} >
-                <Grid size={{ xs: 10, md: 5 }} >
+            <Grid container mt={{ xs: 0, md: 0 }} spacing={10} sx={{ display: 'flex', justifyContent: 'center' }} ml={5} mb={{ xs: 5, md: 0 }} >
+                <Grid size={{ xs: 8, md: 5 }} >
                     <img src="/images/car3-home.svg" alt="Logo" className="responsive-image" />
                 </Grid>
 
-                <Grid size={{ xs: 6, md: 6 }} ml={7} mt={10} sx={{ maxWidth: 400 }}>
+                <Grid size={{ xs: 10, md: 6 }} ml={{ xs: 0, md: 7 }} mt={{ xs: -10, md: 10 }} sx={{ maxWidth: 400 }}>
 
                     <Typography
                         variant="h3"
@@ -181,8 +211,8 @@ const Home = () => {
                 </Grid>
             </Grid>
 
-            <Grid container mt={{ xs: -5, md: 10 }} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', padding: 2 }}>
-                <Grid size={{ xs: 12, md: 8 }} >
+            <Grid container mt={{ xs: 0, md: 10 }} sx={{ display: 'flex', justifyContent: 'center', backgroundColor: 'white', padding: 2 }}>
+                <Grid size={{ xs: 12, md: 8 }} mt={{ xs: -20, md: 0 }} sx={{ display: 'flex', justifyContent: 'center' }}>
                     <img
                         src={showAltImage ? "/images/section4-home.svg" : "/images/section3-home.svg"}
                         alt="Section Image"
@@ -193,9 +223,9 @@ const Home = () => {
             </Grid>
 
 
-            <Grid container mt={{ xs: 0, md: 0 }} spacing={20} sx={{ display: 'flex' }} ml={5} >
+            <Grid container mt={{ xs: -20, md: 0 }} spacing={{ xs: 20, md: 10 }} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black' }} ml={{ xs: 0, md: 5 }} >
 
-                <Grid size={{ xs: 6, md: 6 }} ml={7} mt={10} sx={{ maxWidth: 400 }}>
+                <Grid size={{ xs: 10, md: 6 }} ml={7} mt={10} sx={{ maxWidth: 400 }}>
 
                     <Typography
                         variant="h3"
@@ -250,7 +280,7 @@ const Home = () => {
 
                 </Grid>
 
-                <Grid size={{ xs: 10, md: 5 }} mt={5} >
+                <Grid size={{ xs: 10, md: 5 }} mt={{ xs: -15, md: 5 }} sx={{ justifyContent: 'center' }} >
                     <Typography
                         variant="h5"
                         sx={{
@@ -264,26 +294,29 @@ const Home = () => {
                     >
                         BESPOKE SKINS BY <span style={{ color: 'red' }}>STICKINK</span>
                     </Typography>
-                    <img src="/images/car3-home.svg" alt="Logo" className="responsive-image" />
+                    <div>
+                        <img src="/images/Group 30.svg" alt="Logo" className="responsive-image" />
+                    </div>
+
                 </Grid>
             </Grid>
 
-            <Grid container mt={{ xs: 0, md: 10 }} spacing={0} sx={{ display: 'flex', justifyContent:'center' }}   >
+            <Grid container mt={{ xs: 5, md: 10 }} spacing={0} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'center' }}   >
 
-                <Grid size={{ xs: 4, md: 3 }} ml={7} sx={{ backgroundColor: 'white' }} p={10} maxHeight={500} >
+                <Grid size={{ xs: 12, md: 3 }} ml={{ xs: 0, md: 7 }} sx={{ backgroundColor: 'white' }} maxHeight={480} >
                     <div
                         style={{
                             display: 'flex',
                             position: 'relative',
-                            top: -50,
-                            left: 100
+                            top: 10,
+                            left: 170
                         }}
                     >
                         <img src="/images/stickink-logo1.svg" alt="Logo" width={350} />
                     </div>
 
 
-                    <div style={{ marginTop: 30 }}>
+                    <div style={{ marginTop: 30, padding: '20px' }}>
                         <Typography
                             variant="h7"
                             sx={{
@@ -293,7 +326,8 @@ const Home = () => {
                                 textDecoration: 'none',
                                 // maxWidth: 100, 
                                 // wordWrap: 'break-word',
-                                lineHeight: 1.2
+                                lineHeight: 1.2,
+
 
                             }}
                         >
@@ -304,28 +338,30 @@ const Home = () => {
 
                 </Grid>
 
-                <Grid size={{ xs: 4, md: 6 }} >
+                <Grid size={{ xs: 6, md: 6 }}  >
 
                     <img
                         src="/images/3D_13.svg"
                         alt="3D Car"
-                    // className="section4-image"
-                    // height={480}
-                    width={500}
+                        // className="section4-image"
+                        height={480}
+                        width={480}
                     />
 
                 </Grid>
 
-                <div
-                    style={{
+                <Grid size={{ xs: 5, md: 6 }}
+                    sx={{
                         display: 'flex',
                         position: 'relative',
                         top: -70,
-                        // left: 70
                     }}
                 >
-                    <img src="/images/Group 25.svg" alt="Logo" width={450} />
-                </div>
+                    <div>
+                        <img src="/images/Group 25.svg" alt="Logo" width={450} />
+                    </div>
+
+                </Grid>
             </Grid>
 
         </>
