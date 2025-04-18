@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+
+.section1-about-text{
+    font-family: "Nosifer", sans-serif !important;
+    color: red;
+    font-weight: 600;
+}
+
+.about-video {
+    position: absolute;
+    top:30;
+    width: 70%;
+    height: auto;
+    border: none;
+    outline: none;
+    display: block;
+    object-fit: cover;
+    pointer-events: none; /* Optional: disables interaction like play/pause clicks */
+    overflow: hidden;
+    
+  }

@@ -138,7 +138,14 @@ function Navbar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu} ml={50}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                  <Typography sx={{ textAlign: 'center' }}
+                    onClick={() => {
+                      handleCloseNavMenu();
+                      if (page === 'About us') {
+                        handleNavigation('/about'); // Adjust this path as needed
+                      }
+                    }}
+                  >{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
