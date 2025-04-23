@@ -112,7 +112,6 @@ const About = () => {
           <Grid container sx={{ justifyContent: 'center' }} mt={10}>
             <Grid size={{ xs: 6, md: 12 }}>
 
-
               {/* Row 1: "How" and "We" */}
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap: '3.5rem' }}>
                 <motion.div
@@ -215,7 +214,9 @@ const About = () => {
           <Grid container mt={12} >
 
             <Grid size={{ xs: 12, md: 12 }} >
-              <Box component="img" alt="image" src="/images/Rectangle 3.svg" sx={{ width: '100%' }}  ></Box>
+            <img src="/images/Rectangle 3.svg" alt="image" width='100%' height='100%'
+                  //  style={{ width: '100%' }}
+                     />                  
             </Grid>
 
           </Grid>
@@ -435,12 +436,13 @@ const About = () => {
         showSection6 && (
           <>
 
-            <Typography variant="h4" sx={{ color: 'white', fontWeight: 600 }}>Captures</Typography>
+
+<Typography variant="h4" sx={{ color: 'white', fontWeight: 600 }} mt={10} ml={12}>Captures</Typography>
 
 
-            <Grid container mt={12} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid container mt={6}  sx={{ justifyContent: 'center' }}>
 
- 
+         
               <Grid container size={{ xs: 12, md: 5 }} >
 
                 <Grid size={{ xs: 12, md: 12 }}>
@@ -464,7 +466,7 @@ const About = () => {
              
               </Grid>
 
-              <Grid size={{ xs: 12, md: 6 }}>
+              <Grid size={{ xs: 12, md: 5 }}>
                 <img src="/images/BMW_M4_2 2.svg" alt="image" width='100%'
                 //  style={{ width: '100%'}}
                 />
@@ -472,6 +474,7 @@ const About = () => {
               </Grid>
 
             </Grid>
+           
 
 
           </>

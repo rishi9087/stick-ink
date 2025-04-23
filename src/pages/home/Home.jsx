@@ -211,16 +211,53 @@ const Home = () => {
                 </Grid>
             </Grid>
 
-            <Grid container mt={{ xs: 0, md: 10 }} sx={{ display: 'flex', justifyContent: 'center', backgroundColor: 'white', padding: 2 }}>
-                <Grid size={{ xs: 12, md: 8 }} mt={{ xs: -20, md: 0 }} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid container mt={{ xs: 0, md: 10 }}
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    backgroundColor: 'white',
+                    padding: 2,
+                    // position: 'relative',
+                    // overflow: 'hidden'
+                }}
+            >
+                {showAltImage && (
+                    <Grid
+                        item
+                        xs={12} md={8}
+                        sx={{
+                            position: 'absolute',
+                            zIndex: 2,
+                            animation: 'slideDown 0.7s ease-out forwards'
+                        }}
+                    >
+                        <img
+                            src="/images/INFERNO.svg"
+                            alt="image"
+                            style={{ width: '50%' }}
+                        />
+                    </Grid>
+                )}
+
+                <Grid
+                    item
+                    xs={12} md={8}
+                    mt={{ xs: -20, md: 0 }}
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        zIndex: 1
+                    }}
+                >
                     <img
-                        src={showAltImage ? "/images/section4-home.svg" : "/images/section3-home.svg"}
+                        src="/images/section3-home.svg"
                         alt="Section Image"
-                        className={showAltImage ? 'slide-down' : 'section3-image'}
-                    // style={{ height: '500px', width: '1000px'}}
+                        className='section3-image'
+                        style={{ width: '100%', maxWidth: '1000px' }}
                     />
                 </Grid>
             </Grid>
+
 
 
             <Grid container mt={{ xs: -20, md: 0 }} spacing={{ xs: 20, md: 10 }} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black' }} ml={{ xs: 0, md: 5 }} >

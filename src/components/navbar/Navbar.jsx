@@ -142,7 +142,13 @@ function Navbar() {
                     onClick={() => {
                       handleCloseNavMenu();
                       if (page === 'About us') {
-                        handleNavigation('/about'); // Adjust this path as needed
+                        handleNavigation('/about');
+                      }
+                      if (page === 'Gallery') {
+                        handleNavigation('/gallery'); 
+                      }
+                      if (page === 'Catalogue') {
+                        handleNavigation('/catalogue'); 
                       }
                     }}
                   >{page}</Typography>
@@ -179,6 +185,12 @@ function Navbar() {
                   handleCloseNavMenu();
                   if (page === 'About us') {
                     handleNavigation('/about'); // Adjust this path as needed
+                  }
+                  if (page === 'Gallery') {
+                    handleNavigation('/gallery'); 
+                  }
+                  if (page === 'Catalogue') {
+                    handleNavigation('/catalogue'); 
                   }
                 }}
                 sx={{ my: 2, color: 'white', display: 'block' }}
