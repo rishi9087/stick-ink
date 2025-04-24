@@ -231,9 +231,7 @@ function Navbar() {
 
             <IconButton><img src="/public/images/favrt.svg" alt="Logo" className="header-logo" /></IconButton>
             <IconButton><img src="/public/images/cart.svg" alt="Logo" className="header-logo" /></IconButton>
-            <IconButton><img src="/public/images/profile.svg" alt="Logo" className="header-logo" /></IconButton>
-
-
+            <IconButton onClick={()=> handleNavigation('/profile') } ><img src="/public/images/profile.svg" alt="Logo" className="header-logo" /></IconButton>
 
           </Box>
 
