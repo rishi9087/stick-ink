@@ -7,6 +7,7 @@ import Gallery from '../pages/gallery/Gallery';
 import Catalogue from '../pages/catalogue/Catalogue';
 import CatalogueCar from '../pages/cataloguecar/CatalogueCar';
 import Profile from '../pages/profile/Profile';
+import Faq from '../pages/faq/Faq';
 
 const Navigation = () => {
     return (
@@ -18,6 +19,7 @@ const Navigation = () => {
                 <Route path="/catalogue" element={<Catalogue />} />
                 <Route path="/cataloguecar" element={<CatalogueCar />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/faq" element={<Faq />} />
             </Routes>
         </Router>
     );

@@ -150,6 +150,9 @@ function Navbar() {
                       if (page === 'Catalogue') {
                         handleNavigation('/catalogue'); 
                       }
+                      if (page === `FAQ's`) {
+                        handleNavigation('/faq'); 
+                      }
                     }}
                   >{page}</Typography>
                 </MenuItem>
@@ -191,6 +194,9 @@ function Navbar() {
                   }
                   if (page === 'Catalogue') {
                     handleNavigation('/catalogue'); 
+                  }
+                  if (page === `FAQ's`) {
+                    handleNavigation('/faq'); 
                   }
                 }}
                 sx={{ my: 2, color: 'white', display: 'block' }}
