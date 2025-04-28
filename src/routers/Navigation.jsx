@@ -8,6 +8,9 @@ import Catalogue from '../pages/catalogue/Catalogue';
 import CatalogueCar from '../pages/cataloguecar/CatalogueCar';
 import Profile from '../pages/profile/Profile';
 import Faq from '../pages/faq/Faq';
+import Billing from '../pages/billing/Billing';
+import AdminRegister from '../pages/control panel/Register';
+import AdminLogin from '../pages/control panel/Login';
 
 const Navigation = () => {
     return (
@@ -20,6 +23,9 @@ const Navigation = () => {
                 <Route path="/cataloguecar" element={<CatalogueCar />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/faq" element={<Faq />} />
+                <Route path="/billing" element={<Billing />} />
+                <Route path="/adminregister" element={<AdminRegister />} />
+                <Route path="/adminlogin" element={<AdminLogin />} />
             </Routes>
         </Router>
     );

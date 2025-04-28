@@ -1,12 +1,10 @@
 import { Button, Grid, Typography } from "@mui/material";
 import Navbar from "../../components/navbar/Navbar";
 import { useState, useRef } from "react";
-import CarCanvas from './CarCanvas'
 
 const CatalogueCar = () => {
     const [activeSection, setActiveSection] = useState('vehicle');
     const [designImage, setDesignImage] = useState(false);
-    const [color, setColor] = useState('');
 
     const handleDesign = () => {
         setDesignImage(true);
@@ -21,16 +19,13 @@ const CatalogueCar = () => {
             <Grid container sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'white' }}>
                 <Grid size={{ xs: 12, md: 10 }}>
 
-                    {/* {
+                    {
                         designImage === true ? (
                             <img src="/images/kushaq-inferno.svg" alt="image" width='80%' />
                         ) : (
                             <img src="/images/kushaq white.svg" alt="image" width='80%' />
                         )
-                    } */}
-
-                    <CarCanvas imageSrc="/public/images/kushaq white.svg" color={color} />
-
+                    }
 
                 </Grid>
 
@@ -114,10 +109,8 @@ const CatalogueCar = () => {
                                     style={{ cursor: 'pointer' }}
                                 />
                             </Grid>
-
-
-
                         </Grid>
+                        
                     </Grid>
                 </Grid>
             )}
