@@ -5,17 +5,3 @@
     color: red;
     font-weight: 600;
 }
-
-.about-video {
-    position: absolute;
-    top:30;
-    width: 70%;
-    height: auto;
-    border: none;
-    outline: none;
-    display: block;
-    object-fit: cover;
-    pointer-events: none; /* Optional: disables interaction like play/pause clicks */
-    overflow: hidden;
-    
-  }

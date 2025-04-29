@@ -21,7 +21,7 @@ const Catalogue = () => {
             </div>
 
 
-            <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '200px', width: '100%', zIndex: 10 }}>
+            <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: {xs:'50px', md:'200px'}, width: '100%', zIndex: 10 }}>
                 <Grid size={{ xs: 12, md: 5 }} sx={{
                     backdropFilter: 'blur(10px)',
                     backgroundColor: 'rgba(255, 255, 255, 0.2)',
@@ -34,16 +34,17 @@ const Catalogue = () => {
                     <Typography>This is the content of the first box.</Typography>
 
                     <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }} mt={5}>
-                        <Grid size={{ xs: 12, md: 4 }}>
+                        <Grid size={{ xs: 6, md: 4 }}>
                             <Button sx={{ backgroundColor: 'red', color: 'white', borderRadius: '10px', padding: '10px' }} onClick={() => handleNavigation('/cataloguecar')} >Get started</Button>
                         </Grid>
-                        <Grid size={{ xs: 12, md: 4 }}>
+                        <Grid size={{ xs: 6, md: 4 }}>
                             <img src="/images/car-icon.svg" alt="image" width='80%' />
                         </Grid>
                     </Grid>
-
                 </Grid>
+
                 <Typography style={{ color: 'white' }}>Or</Typography>
+
                 <Grid size={{ xs: 12, md: 5 }} sx={{
                     backdropFilter: 'blur(10px)',
                     backgroundColor: 'rgba(255, 255, 255, 0.2)',
@@ -56,10 +57,10 @@ const Catalogue = () => {
                     <Typography>This is the content of the second box.</Typography>
 
                     <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }} mt={5}>
-                        <Grid size={{ xs: 12, md: 4 }}>
+                        <Grid size={{ xs: 6, md: 4 }}>
                             <Button sx={{ backgroundColor: 'red', color: 'white', borderRadius: '10px', padding: '10px' }}>Get started</Button>
                         </Grid>
-                        <Grid size={{ xs: 12, md: 4 }}>
+                        <Grid size={{ xs: 6, md: 4 }}>
                             <img src="/images/bike-icon.svg" alt="image" width='60%' />
                         </Grid>
                     </Grid>
@@ -67,9 +68,9 @@ const Catalogue = () => {
                 </Grid>
             </Grid>
 
-            <Grid container >
+            <Grid container  >
 
-                <Grid size={{ xs: 12, md: 12 }}>
+                <Grid size={{ xs:12, md: 12 }}  >
                     <img src="/images/3D_15.svg" alt="image" width='100%'
                         style={{ opacity: 0.4 }}
                     />

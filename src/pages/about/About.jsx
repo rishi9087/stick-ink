@@ -83,7 +83,7 @@ const About = () => {
       // Throttle scroll actions to prevent spamming
       setTimeout(() => {
         isScrolling.current = false;
-      }, 800); // Cooldown time to prevent multiple triggers in quick succession
+      }, 1500); // Cooldown time to prevent multiple triggers in quick succession
     };
 
     // Attach the scroll event listener only when any section is visible
@@ -109,71 +109,77 @@ const About = () => {
       {
         showSection1 && (
 
-          <Grid container sx={{ justifyContent: 'center' }} mt={10}>
-            <Grid size={{ xs: 6, md: 12 }}>
+          <Grid container sx={{display:'flex', flexDirection:{xs:'column', md:'row'}, justifyContent: 'center', alignItems:'center' }} mt={10}>
+            <Grid container size={{ xs: 10, md: 8 }}>
 
               {/* Row 1: "How" and "We" */}
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap: '3.5rem' }}>
+              <Grid sx={{display:'flex', justifyContent: 'center', alignItems:'center', }} gap={3}>
                 <motion.div
                   initial={{ x: '-100vw', y: '-100vh' }}
                   animate={{ x: 0, y: 0 }}
-                  transition={{ type: 'tween', duration: 1, ease: 'easeInOut' }}
+                  transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
                 >
-                  <Typography sx={{ fontSize: '7rem' }} className="section1-about-text">How</Typography>
+                  <Typography sx={{ fontSize: {xs:'3rem', md:'7rem'} }} className="section1-about-text">How</Typography>
                 </motion.div>
 
                 <motion.div
                   initial={{ x: '100vw', y: '-100vh' }}
                   animate={{ x: 0, y: 40 }} // slight downward offset
-                  transition={{ type: 'tween', duration: 1, ease: 'easeInOut' }}
+                  transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
+              
                 >
-                  <Typography sx={{ fontSize: '7rem' }} className="section1-about-text">We</Typography>
+                  <Typography sx={{ fontSize: {xs:'3rem', md:'7rem'}, marginTop:'10px' }} className="section1-about-text"  >We</Typography>
                 </motion.div>
-              </div>
+              </Grid>
 
               {/* Row 2: Wo + Paragraph */}
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+              <Grid sx={{display:'flex', justifyContent: 'center', alignItems:'center', zIndex:2 }} gap={7} ml={{xs:0, md:12}} >
                 <motion.div
                   initial={{ x: '-100vw', y: '100vh' }}
                   animate={{ x: 0, y: 0 }}
-                  transition={{ type: 'tween', duration: 1, ease: 'easeInOut' }}
+                  transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
                 >
-                  <Typography sx={{ fontSize: '7rem', }} className="section1-about-text">Wo</Typography>
+                  <Typography sx={{ fontSize: {xs:'3rem', md:'7rem'}, }} className="section1-about-text">Wo</Typography>
                 </motion.div>
 
                 <motion.div
                   initial={{ x: '100vw', y: '100vh' }}
                   animate={{ x: 0, y: 0 }}
-                  transition={{ type: 'tween', duration: 1, ease: 'easeInOut' }}
+                  transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
                 >
-                  <Typography variant="body1" sx={{ color: 'white', maxWidth: '250px', marginLeft: '20px', fontSize: '0.7rem' }}>
+                  <Typography variant="body1" sx={{ color: 'white', maxWidth:{sx:'100%', md:'60%'} , fontSize: {xs:'0.3rem', md:'0.7rem'} , marginTop:{xs:'30px', md:0}}}>
                     Come along with Joel as he shows you what to use, how to use it and some helpful tips and tricks to get your graphics kit installed and looking perfect! We’ve also added a bunch of key points and tips below for a perfect install at home.
                   </Typography>
                 </motion.div>
-              </div>
+              </Grid>
 
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', marginTop: '-110px', marginLeft: '280px' }}>
+              <Grid size={{xs:4.5, md:3.5}} sx={{display:'flex', justifyContent: 'center', alignItems:'center', position:'absolute', marginTop:{xs:'110px', md:'230px'}, zIndex:1}} ml={{xs:0, md:0}} >
                 <motion.div
                   initial={{ x: '-100vw', y: '100vh' }}
                   animate={{ x: 0, y: 0 }}
-                  transition={{ type: 'tween', duration: 1, ease: 'easeInOut' }}
+                  transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
                 >
-                  <Box component="img" alt="A beautiful view" src="/images/about-car.svg" width={350}  ></Box>
+                  <img src="/images/about-car.svg" alt="image" width='100%' />
+                  {/* <Box component="img" alt="A beautiful view" src="" width={350}  ></Box> */}
                 </motion.div>
-              </div>
+              </Grid>
 
               {/* Row 3: Rk */}
-              <div style={{ display: 'flex', justifyContent: 'center', }}>
+              <Grid ml={{xs:10, md:30}} mt={{xs:0, md:-2}}  >
                 <motion.div
                   initial={{ y: '100vh' }}
                   animate={{ y: 0 }}
-                  transition={{ type: 'tween', duration: 1, ease: 'easeInOut' }}
+                  transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
                 >
-                  <Typography sx={{ fontSize: '7rem' }} className="section1-about-text">Rk</Typography>
+                  <Typography sx={{ fontSize: {xs:'3rem', md:'7rem'} }} className="section1-about-text">Rk</Typography>
                 </motion.div>
-              </div>
+              </Grid>
 
-              <IconButton onClick={handleScroll} sx={{ marginTop: -40, marginLeft: 130 }} ><img src="/images/Group 19.svg" alt="Logo" className="header-logo" width={100} /></IconButton>
+             
+            </Grid>
+
+            <Grid size={{ xs: 3, md: 2 }} mt={{xs:5, md:30}}>
+            <IconButton onClick={handleScroll}  ><img src="/images/Group 19.svg" alt="Logo" className="header-logo" width='80%' /></IconButton>
             </Grid>
 
           </Grid>
@@ -182,30 +188,44 @@ const About = () => {
 
       {
         showVideoSection && (
-          <Grid container sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center' }} mt={12} >
 
-            <Grid size={{ xs: 6, md: 8 }} >
-              <Typography variant="h4" sx={{ color: 'white', fontWeight: 600 }}>Watch</Typography>
+          <Container maxWidth="md" sx={{ mt: 12, }} >
+
+        
+          <Grid container sx={{ display: 'flex',  alignItems: 'center' }}  >
+
+            <Grid container size={{ xs: 10, md: 10 }}>
+
+            <Grid size={{ xs: 12, md: 12 }} >
+              <Typography sx={{ color: 'white', fontWeight: 600, fontSize:{xs:'16px', md:'25px'} }}>Watch</Typography>
             </Grid>
 
-            <Grid size={{ xs: 6, md: 8 }} mt={3} >
-              <Typography variant="body1" sx={{ color: 'white' }}>Learn more with Joel in our full video:</Typography>
+            <Grid size={{ xs: 12, md: 12 }} mt={3} >     
+              <Typography variant="body1" sx={{ color: 'white',fontSize:{xs:'12px', md:'18px'} }}>Learn more with Joel in our full video:</Typography>
             </Grid>
 
-            <Grid size={{ xs: 6, md: 8 }} mt={2} >
+            <Grid size={{ xs: 12, md: 12 }} mt={2} >
               <video
                 src="/public/images/car-video.mp4"
                 // autoPlay
                 muted
                 loop
                 playsInline
-                className="about-video"
+                // className="about-video"
+                width='100%'
               />
             </Grid>
+            </Grid>
 
-            <IconButton onClick={handleVideoScroll} sx={{ marginTop: 40, marginLeft: 100 }} ><img src="/images/Group 19.svg" alt="Logo" className="header-logo" width={100} /></IconButton>
+            <Grid size={{ xs: 2, md: 2 }} mt={{xs:22, md:45}}>
+            <IconButton onClick={handleVideoScroll} ><img src="/images/Group 19.svg" alt="Logo"  width='70%' /></IconButton>
+            </Grid>
 
           </Grid>
+
+         
+
+          </Container>
         )
       }
 
@@ -362,7 +382,7 @@ const About = () => {
               size={{ xs: 12, md: 5 }}
               sx={{
                 position: 'absolute',
-                top: 0,
+                top: {xs:'300px', md:0},
                 right: { xs: '0', md: '5%' },
                 zIndex: 2,
                 display: 'flex',

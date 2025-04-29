@@ -24,6 +24,13 @@ function Navbar() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    
+    navigate(path);
+  };
+
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
@@ -60,8 +67,8 @@ function Navbar() {
         <p>Cart</p>
       </MenuItem>
 
-      <MenuItem >
-        <IconButton><img src="/public/images/profile.svg" alt="Logo" className="header-logo" /></IconButton>
+      <MenuItem onClick={()=> handleNavigation('/profile') }>
+        <IconButton ><img src="/public/images/profile.svg" alt="Logo" className="header-logo" /></IconButton>
         <p>Profile</p>
       </MenuItem>
 
@@ -83,12 +90,7 @@ function Navbar() {
     setAnchorElUser(null);
   };
 
-  const navigate = useNavigate();
 
-  const handleNavigation = (path) => {
-    
-    navigate(path);
-  };
 
   return (
     <AppBar position="static" sx={{ bgcolor: 'black' }}>

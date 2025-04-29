@@ -4,9 +4,16 @@ import './Home.css';
 import Navbar from "../../components/navbar/Navbar";
 import { useState, useEffect } from "react";
 import IconButton from '@mui/material/IconButton';
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
 
+  const navigate = useNavigate();
+
+    const handleNavigation = (path) => {
+
+        navigate(path);
+    };
     const [scrolled, setScrolled] = useState(false);
     const [runvideo, setRunvideo] = useState(false);
     const [animate, setAnimate] = useState(false);
@@ -45,7 +52,7 @@ const Home = () => {
     useEffect(() => {
         const handleScroll = () => {
 
-            setShowAltImage(window.scrollY > 1000);
+            setShowAltImage(window.scrollY > 500);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -61,29 +68,14 @@ const Home = () => {
 
             {
                 scrolled && (
-                    <>
-                        <div style={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            overflow: 'hidden'
-                        }}>
+                    
+                <Grid container    >
 
-                            <img src="/images/stickink-logo.svg" alt="Logo"
-                                style={{
-
-                                    position: 'absolute',
-                                    top: 30,
-                                    // left: 500, 
-                                    width: '250px',
-                                    height: '150px',
-
-                                }}
-                            />
-                        </div>
-
-
-                    </>
+                    <Grid size={{ xs: 12, md: 12 }} sx={{ display:'flex', justifyContent: 'center', alignItems: 'center', position:'absolute', top:{xs:'60px', md:'100px'} }} >
+                        <img src='/images/stickink-logo.svg' alt="image" width="30%"  />
+                    </Grid>
+    
+                </Grid>              
 
                 )
 
@@ -99,56 +91,57 @@ const Home = () => {
                             left: 100
                         }}
                     >
-                        <img src="/images/Group.svg" alt="Logo" width={350} className="animate-image" />
+                        <img src="/images/Group.svg" alt="Logo" width='100%' className="animate-image" />
                     </div>
                 )
             }
 
-
-
             {
                 runvideo && (
-                    <video
-                        src="/public/images/car-video.mp4"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="video-background"
-                        width="100%"
-                    />
+                    <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+                        <Grid size={{ xs: 12, md: 12 }}>
+
+                            <video
+                                src="/public/images/car-video.mp4"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="video-background"
+                                width="100%"
+                            />
+                        </Grid>
+                    </Grid>
                 )
             }
 
-            <Grid container mt={{ xs: 0, md: -20 }} sx={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}  >
+            <Grid container mt={{ xs: 0, md: -7 }} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}  >
                 <Grid size={{ xs: 12, md: 12 }}>
                     <img src={scrolled ? "/images/car2-home.svg" : "/images/car-home.svg"} alt="Logo" width="100%" />
+                </Grid>
+                <Grid size={{ xs: 1.5, md: 1 }} mt={{ xs: -5, md: -27 }} >
+
+                    <IconButton onClick={handleScroll}  ><img src="/images/Group 19.svg" alt="Logo" width="100%" /></IconButton>
 
                 </Grid>
-                <Grid size={{ xs: 1, md: 1 }} mt={{xs:-5, md:-17}} >
-
-                    <IconButton onClick={handleScroll}  ><img src="/images/Group 19.svg" alt="Logo"  width="100%"/></IconButton>
-              
-                </Grid>
-
 
             </Grid>
 
-            <Grid container mt={{ xs: 0, md: 10}} spacing={15} sx={{ display: 'flex', justifyContent: 'center' }} mb={{ xs: 5, md: 0 }} >
-                <Grid size={{ xs: 12, md: 5 }} >
+            <Grid container mt={{ xs: 0, md: 10 }} spacing={15} sx={{ display: 'flex', justifyContent: 'center' }} mb={{ xs: 5, md: 0 }} >
+                <Grid size={{ xs: 11, md: 5 }} >
                     <img src="/images/car3-home.svg" alt="Logo" className="responsive-image" width='100%' />
                 </Grid>
 
-                <Grid size={{ xs: 10, md: 6 }}  width='100%' mt={{xs:-12, md:5}} >
+                <Grid size={{ xs: 10, md: 6 }} mt={{ xs: -12, md: 5 }} >
 
                     <Typography
-                        variant="h3"
+                        // variant="h3"
                         sx={{
+                            fontSize: { xs: '30px', md: '35px' },
                             fontWeight: 700,
                             //   letterSpacing: '.3rem',
                             color: 'white',
                             textDecoration: 'none',
-
                         }}
 
                     >
@@ -157,9 +150,9 @@ const Home = () => {
 
                     <div style={{ marginTop: 30 }}>
                         <Typography
-                            variant="h7"
+                            // variant="h7"
                             sx={{
-                                // fontWeight: 700,
+                                fontSize: { xs: '12px', md: '16px' },
                                 //   letterSpacing: '.3rem',
                                 color: 'white',
                                 textDecoration: 'none',
@@ -168,7 +161,7 @@ const Home = () => {
                                 lineHeight: 1.2
 
                             }}
-                            
+
                         >
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget diam.Lorem ipsum dolor
                         </Typography>
@@ -176,9 +169,9 @@ const Home = () => {
                     </div>
                     <div style={{ marginTop: 30 }}>
                         <Typography
-                            variant="h7"
+
                             sx={{
-                                // fontWeight: 700,
+                                fontSize: { xs: '12px', md: '16px' },
                                 //   letterSpacing: '.3rem',
                                 color: 'white',
                                 textDecoration: 'none',
@@ -187,7 +180,7 @@ const Home = () => {
                                 lineHeight: 1.2
 
                             }}
-                            width='100%' 
+                            width='100%'
                         >
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget diam.Lorem ipsum dolor
                         </Typography>
@@ -205,7 +198,7 @@ const Home = () => {
                         fontSize: '12px',
                         fontWeight: 600,
                         textTransform: 'none' //to avoid conversion to capital letters
-                    }}>
+                    }} onClick={() => handleNavigation('/catalogue')}>
                         Explore
                     </Button>
                 </Grid>
@@ -223,7 +216,7 @@ const Home = () => {
             >
                 {showAltImage && (
                     <Grid
-                    size={{ xs: 4, md:2}}
+                        size={{ xs: 4, md: 2 }}
                         sx={{
                             position: 'absolute',
                             // right:50,
@@ -259,9 +252,9 @@ const Home = () => {
 
 
 
-            <Grid container mt={{ xs: -20, md: 0 }} spacing={{ xs: 20, md: 20 }} sx={{ display: 'flex',  backgroundColor: 'black' }} ml={{ xs: 0, md: 5 }} >
+            <Grid container mt={{ xs: -20, md: 0 }} spacing={{ xs: 20, md: 20 }} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', justifyContent: 'center', backgroundColor: 'black' }} >
 
-                <Grid size={{ xs: 10, md: 6 }} ml={7} mt={10} sx={{ maxWidth: 400 }}>
+                <Grid size={{ xs: 10, md: 5 }} mt={10} maxWidth='70%'>
 
                     <Typography
                         variant="h3"
@@ -330,74 +323,27 @@ const Home = () => {
                     >
                         BESPOKE SKINS BY <span style={{ color: 'red' }}>STICKINK</span>
                     </Typography>
-                    <div style={{marginTop:-30}}>
+                    <div style={{ marginTop: -30 }}>
                         <img src="/images/Group 30.svg" alt="Logo" className="responsive-image" width='100%' />
                     </div>
 
                 </Grid>
             </Grid>
 
-            <Grid container mt={{ xs: 5, md: 10 }} spacing={0} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'center' }}   >
+            <Grid container mt={{ xs: 5, md: 10 }} spacing={0} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}   >
 
-                <Grid size={{ xs: 12, md: 3 }} ml={{ xs: 0, md: 7 }} sx={{ backgroundColor: 'white' }} maxHeight={480} >
-                    <div
-                        style={{
-                            display: 'flex',
-                            position: 'relative',
-                            top: 10,
-                            left: 170
-                        }}
-                    >
-                        <img src="/images/stickink-logo1.svg" alt="Logo" width={350} />
-                    </div>
-
-
-                    <div style={{ marginTop: 30, padding: '20px' }}>
-                        <Typography
-                            variant="h7"
-                            sx={{
-                                // fontWeight: 700,
-                                //   letterSpacing: '.3rem',
-                                color: 'black',
-                                textDecoration: 'none',
-                                // maxWidth: 100, 
-                                // wordWrap: 'break-word',
-                                lineHeight: 1.2,
-
-
-                            }}
-                        >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget diam.Lorem ipsum dolor
-                        </Typography>
-
-                    </div>
-
-                </Grid>
-
-                <Grid size={{ xs: 6, md: 6 }}  >
+                <Grid size={{ xs: 10, md: 7 }}  >
 
                     <img
-                        src="/images/3D_13.svg"
-                        alt="3D Car"
+                        src="/images/Group 26.svg"
+                        alt="image"
                         // className="section4-image"
-                        height={480}
-                        width={480}
+                        // height={480}
+                        width='100%'
                     />
 
                 </Grid>
 
-                <Grid size={{ xs: 5, md: 6 }}
-                    sx={{
-                        display: 'flex',
-                        position: 'relative',
-                        top: -70,
-                    }}
-                >
-                    <div>
-                        <img src="/images/Group 25.svg" alt="Logo" width={450} />
-                    </div>
-
-                </Grid>
             </Grid>
 
         </>

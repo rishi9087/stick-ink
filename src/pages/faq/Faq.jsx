@@ -20,15 +20,17 @@ const Faq = () => {
 
                 {/* Right Grid */}
                 <Grid item size={{ xs: 12, md: 8 }} p={10} >
-                    <Accordion>
+                    <Accordion >
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header"
                             
                             sx={{
-                                borderBottom: '1px solid #333', // Darker border color
+                                borderBottom: '1px solid #333',
+                                
                             }}
+                            
                         >
                             <Typography variant="h6" sx={{color:'red', fontSize:'17px'}}>Lorem ipsum dolor sit amet, consectetur?</Typography>
                         </AccordionSummary>
@@ -45,7 +47,7 @@ const Faq = () => {
                             aria-controls="panel2a-content"
                             id="panel2a-header"
                             sx={{
-                                borderBottom: '1px solid #333', // Darker border color
+                                borderBottom: '1px solid #333', 
                             }}
                         >
                             <Typography variant="h6" sx={{color:'red',fontSize:'17px'}}>Lorem ipsum dolor sit amet, consectetur?</Typography>
@@ -63,7 +65,7 @@ const Faq = () => {
                             aria-controls="panel3a-content"
                             id="panel3a-header"
                             sx={{
-                                borderBottom: '1px solid #333', // Darker border color
+                                borderBottom: '1px solid #333', 
                             }}
                         >
                             <Typography variant="h6" sx={{color:'red',fontSize:'17px'}}>Lorem ipsum dolor sit amet, consectetur?</Typography>
@@ -81,7 +83,7 @@ const Faq = () => {
                             aria-controls="panel4a-content"
                             id="panel4a-header"
                             sx={{
-                                borderBottom: '1px solid #333', // Darker border color
+                                borderBottom: '1px solid #333',
                             }}
                         >
                             <Typography variant="h6"sx={{color:'red',fontSize:'17px'}}>Lorem ipsum dolor sit amet, consectetur?</Typography>
@@ -98,9 +100,7 @@ const Faq = () => {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel5a-content"
                             id="panel5a-header"
-                            sx={{
-                                borderBottom: '1px solid #333', // Darker border color
-                            }}
+                          
                         >
                             <Typography variant="h6" sx={{color:'red',fontSize:'17px'}}>Lorem ipsum dolor sit amet, consectetur?</Typography>
                         </AccordionSummary>
