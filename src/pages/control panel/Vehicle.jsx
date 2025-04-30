@@ -192,8 +192,8 @@ const vehicle = () => {
                         }}
                     >
 
-
                         <Grid>
+                            
                         <Typography variant="body1" sx={{fontWeight:'bold'}}>
                                   Add vehicle
                                 </Typography>
