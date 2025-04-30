@@ -38,7 +38,7 @@ const Catalogue = () => {
                             <Button sx={{ backgroundColor: 'red', color: 'white', borderRadius: '10px', padding: '10px' }} onClick={() => handleNavigation('/cataloguecar')} >Get started</Button>
                         </Grid>
                         <Grid size={{ xs: 6, md: 4 }}>
-                            <img src="/images/car-icon.svg" alt="image" width='80%' />
+                            <img src="/stick-ink/images/car-icon.svg" alt="image" width='80%' />
                         </Grid>
                     </Grid>
                 </Grid>
@@ -61,7 +61,7 @@ const Catalogue = () => {
                             <Button sx={{ backgroundColor: 'red', color: 'white', borderRadius: '10px', padding: '10px' }}>Get started</Button>
                         </Grid>
                         <Grid size={{ xs: 6, md: 4 }}>
-                            <img src="/images/bike-icon.svg" alt="image" width='60%' />
+                            <img src="/stick-ink/images/bike-icon.svg" alt="image" width='60%' />
                         </Grid>
                     </Grid>
 
@@ -71,7 +71,7 @@ const Catalogue = () => {
             <Grid container  >
 
                 <Grid size={{ xs:12, md: 12 }}  >
-                    <img src="/images/3D_15.svg" alt="image" width='100%'
+                    <img src="/stick-ink/images/3D_15.svg" alt="image" width='100%'
                         style={{ opacity: 0.4 }}
                     />
                 </Grid>

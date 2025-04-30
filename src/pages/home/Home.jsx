@@ -72,7 +72,7 @@ const Home = () => {
                 <Grid container    >
 
                     <Grid size={{ xs: 12, md: 12 }} sx={{ display:'flex', justifyContent: 'center', alignItems: 'center', position:'absolute', top:{xs:'60px', md:'100px'} }} >
-                        <img src='/images/stickink-logo.svg' alt="image" width="30%"  />
+                        <img src='/stick-ink/images/stickink-logo.svg' alt="image" width="30%"  />
                     </Grid>
     
                 </Grid>              
@@ -91,7 +91,7 @@ const Home = () => {
                             left: 100
                         }}
                     >
-                        <img src="/images/Group.svg" alt="Logo" width='100%' className="animate-image" />
+                        <img src="/stick-ink/images/Group.svg" alt="Logo" width='100%' className="animate-image" />
                     </div>
                 )
             }
@@ -102,7 +102,7 @@ const Home = () => {
                         <Grid size={{ xs: 12, md: 12 }}>
 
                             <video
-                                src="/images/car-video.mp4"
+                                src="/stick-ink/images/car-video.mp4"
                                 autoPlay
                                 muted
                                 loop
@@ -117,11 +117,11 @@ const Home = () => {
 
             <Grid container mt={{ xs: 0, md: -7 }} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}  >
                 <Grid size={{ xs: 12, md: 12 }}>
-                    <img src={scrolled ? "/images/car2-home.svg" : "/images/car-home.svg"} alt="Logo" width="100%" />
+                    <img src={scrolled ? "/stick-ink/images/car2-home.svg" : "/stick-ink/images/car-home.svg"} alt="Logo" width="100%" />
                 </Grid>
                 <Grid size={{ xs: 1.5, md: 1 }} mt={{ xs: -5, md: -27 }} >
 
-                    <IconButton onClick={handleScroll}  ><img src="/images/Group 19.svg" alt="Logo" width="100%" /></IconButton>
+                    <IconButton onClick={handleScroll}  ><img src="/stick-ink/images/Group 19.svg" alt="Logo" width="100%" /></IconButton>
 
                 </Grid>
 
@@ -129,7 +129,7 @@ const Home = () => {
 
             <Grid container mt={{ xs: 0, md: 10 }} spacing={15} sx={{ display: 'flex', justifyContent: 'center' }} mb={{ xs: 5, md: 0 }} >
                 <Grid size={{ xs: 11, md: 5 }} >
-                    <img src="/images/car3-home.svg" alt="Logo" className="responsive-image" width='100%' />
+                    <img src="/stick-ink/images/car3-home.svg" alt="Logo" className="responsive-image" width='100%' />
                 </Grid>
 
                 <Grid size={{ xs: 10, md: 6 }} mt={{ xs: -12, md: 5 }} >
@@ -225,7 +225,7 @@ const Home = () => {
                         }}
                     >
                         <img
-                            src="/images/INFERNO.svg"
+                            src="/stick-ink/images/INFERNO.svg"
                             alt="image"
                             style={{ width: '45%' }}
                         />
@@ -242,7 +242,7 @@ const Home = () => {
                     }}
                 >
                     <img
-                        src="/images/section3-home.svg"
+                        src="/stick-ink/images/section3-home.svg"
                         alt="Section Image"
                         className='section3-image'
                         style={{ width: '100%', maxWidth: '1000px' }}
@@ -324,7 +324,7 @@ const Home = () => {
                         BESPOKE SKINS BY <span style={{ color: 'red' }}>STICKINK</span>
                     </Typography>
                     <div style={{ marginTop: -30 }}>
-                        <img src="/images/Group 30.svg" alt="Logo" className="responsive-image" width='100%' />
+                        <img src="/stick-ink/images/Group 30.svg" alt="Logo" className="responsive-image" width='100%' />
                     </div>
 
                 </Grid>
@@ -335,7 +335,7 @@ const Home = () => {
                 <Grid size={{ xs: 10, md: 7 }}  >
 
                     <img
-                        src="/images/Group 26.svg"
+                        src="/stick-ink/images/Group 26.svg"
                         alt="image"
                         // className="section4-image"
                         // height={480}

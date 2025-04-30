@@ -21,9 +21,9 @@ const CatalogueCar = () => {
 
                     {
                         designImage === true ? (
-                            <img src="/images/kushaq-inferno.svg" alt="image" width='80%' />
+                            <img src="/stick-ink/images/kushaq-inferno.svg" alt="image" width='80%' />
                         ) : (
-                            <img src="/images/kushaq white.svg" alt="image" width='80%' />
+                            <img src="/stick-ink/images/kushaq white.svg" alt="image" width='80%' />
                         )
                     }
 
@@ -58,14 +58,14 @@ const CatalogueCar = () => {
                         <Grid container spacing={2} sx={{ overflowX: 'auto', flexWrap: 'nowrap' }}>
 
                             <Grid size={{ xs: 6, md: 2 }} sx={{ backgroundColor: 'white', borderRadius: 2 }}>
-                                <img src="/images/kushaq white.svg" alt="Model 1" width="100%" />
+                                <img src="/stick-ink/images/kushaq white.svg" alt="Model 1" width="100%" />
                                 <Typography style={{ textAlign: 'center' }}>Kushaq</Typography>
                             </Grid>
                             <Grid size={{ xs: 6, md: 2 }} sx={{ backgroundColor: 'white', borderRadius: 2 }}>
-                                <img src="/images/kushaq white.svg" alt="Model 2" width="100%" />
+                                <img src="/stick-ink/images/kushaq white.svg" alt="Model 2" width="100%" />
                             </Grid>
                             <Grid size={{ xs: 6, md: 2 }} sx={{ backgroundColor: 'white', borderRadius: 2 }}>
-                                <img src="/images/kushaq white.svg" alt="Model 3" width="100%" />
+                                <img src="/stick-ink/images/kushaq white.svg" alt="Model 3" width="100%" />
                             </Grid>
 
                         </Grid>
@@ -85,13 +85,13 @@ const CatalogueCar = () => {
                             />
 
                             <Grid size={{ xs: 6, md: 2 }}>
-                                <img src="/images/kushaq white.svg" alt="Color 1" width="100%" />
+                                <img src="/stick-ink/images/kushaq white.svg" alt="Color 1" width="100%" />
                             </Grid>
                             <Grid size={{ xs: 6, md: 2 }}>
-                                <img src="/images/kushaq white.svg" alt="Color 2" width="100%" />
+                                <img src="/stick-ink/images/kushaq white.svg" alt="Color 2" width="100%" />
                             </Grid>
                             <Grid size={{ xs: 6, md: 2 }}>
-                                <img src="/images/kushaq white.svg" alt="Color 3" width="100%" />
+                                <img src="/stick-ink/images/kushaq white.svg" alt="Color 3" width="100%" />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -104,7 +104,7 @@ const CatalogueCar = () => {
 
                         <Grid container spacing={2} sx={{ overflowX: 'auto', flexWrap: 'nowrap' }}>
                             <Grid size={{ xs: 6, md: 3 }} sx={{ backgroundColor: 'white', borderRadius: 2 }} p={1}>
-                                <img src="/images/design.jpg" alt="Design 1" width="70%"
+                                <img src="/stick-ink/images/design.jpg" alt="Design 1" width="70%"
                                     onClick={() => handleDesign()}
                                     style={{ cursor: 'pointer' }}
                                 />

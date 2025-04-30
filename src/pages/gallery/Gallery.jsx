@@ -22,19 +22,19 @@ const Gallery = () => {
               <Grid container size={{ xs: 12, md: 5 }} >
 
                 <Grid size={{ xs: 12, md: 12 }}>
-                  <img src="/images/3D_15 2.svg" alt="image" width='100%'
+                  <img src="/stick-ink/images/3D_15 2.svg" alt="image" width='100%'
                   //  style={{ width: '100%' }}
                      />                  
                 </Grid>
                
                 <Grid size={{ xs: 6, md: 6}} >
-                  <img src="/images/3D_13.svg" alt="image" width='100%'
+                  <img src="/stick-ink/images/3D_13.svg" alt="image" width='100%'
                   //  style={{ width: '100%' }} 
                    />
                 </Grid>
 
                 <Grid size={{ xs: 6, md: 6 }}>
-                  <img src="/images/3D_9.svg" alt="image" width='100%'
+                  <img src="/stick-ink/images/3D_9.svg" alt="image" width='100%'
                   //  style={{ width: '100%'}}
                      />
                 </Grid>
@@ -43,7 +43,7 @@ const Gallery = () => {
               </Grid>
 
               <Grid size={{ xs: 12, md: 5 }}>
-                <img src="/images/BMW_M4_2 2.svg" alt="image" width='100%'
+                <img src="/stick-ink/images/BMW_M4_2 2.svg" alt="image" width='100%'
                 //  style={{ width: '100%'}}
                 />
                 

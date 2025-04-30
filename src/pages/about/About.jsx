@@ -159,7 +159,7 @@ const About = () => {
                   animate={{ x: 0, y: 0 }}
                   transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
                 >
-                  <img src="/images/about-car.svg" alt="image" width='100%' />
+                  <img src="/stick-ink/images/about-car.svg" alt="image" width='100%' />
                   {/* <Box component="img" alt="A beautiful view" src="" width={350}  ></Box> */}
                 </motion.div>
               </Grid>
@@ -179,7 +179,7 @@ const About = () => {
             </Grid>
 
             <Grid size={{ xs: 3, md: 2 }} mt={{xs:5, md:30}}>
-            <IconButton onClick={handleScroll}  ><img src="/images/Group 19.svg" alt="Logo" className="header-logo" width='80%' /></IconButton>
+            <IconButton onClick={handleScroll}  ><img src="/stick-ink/images/Group 19.svg" alt="Logo" className="header-logo" width='80%' /></IconButton>
             </Grid>
 
           </Grid>
@@ -206,7 +206,7 @@ const About = () => {
 
             <Grid size={{ xs: 12, md: 12 }} mt={2} >
               <video
-                src="/images/car-video.mp4"
+                src="/stick-ink/images/car-video.mp4"
                 // autoPlay
                 muted
                 loop
@@ -218,7 +218,7 @@ const About = () => {
             </Grid>
 
             <Grid size={{ xs: 2, md: 2 }} mt={{xs:22, md:45}}>
-            <IconButton onClick={handleVideoScroll} ><img src="/images/Group 19.svg" alt="Logo"  width='70%' /></IconButton>
+            <IconButton onClick={handleVideoScroll} ><img src="/stick-ink/images/Group 19.svg" alt="Logo"  width='70%' /></IconButton>
             </Grid>
 
           </Grid>
@@ -234,7 +234,7 @@ const About = () => {
           <Grid container mt={12} >
 
             <Grid size={{ xs: 12, md: 12 }} >
-            <img src="/images/Rectangle 3.svg" alt="image" width='100%' height='100%'
+            <img src="/stick-ink/images/Rectangle 3.svg" alt="image" width='100%' height='100%'
                   //  style={{ width: '100%' }}
                      />                  
             </Grid>
@@ -258,7 +258,7 @@ const About = () => {
                 <Box
                   component="img"
                   alt="image"
-                  src="/images/Rectangle 3.svg"
+                  src="/stick-ink/images/Rectangle 3.svg"
                   sx={{ width: '100%', height: '500px' }}
                 />
               </motion.div>
@@ -326,7 +326,7 @@ const About = () => {
                 <Box
                   component="img"
                   alt="image"
-                  src="/images/Rectangle 3.svg"
+                  src="/stick-ink/images/Rectangle 3.svg"
                   sx={{ width: '100%', height: '500px' }}
                 />
               </motion.div>
@@ -466,19 +466,19 @@ const About = () => {
               <Grid container size={{ xs: 12, md: 5 }} >
 
                 <Grid size={{ xs: 12, md: 12 }}>
-                  <img src="/images/3D_15 2.svg" alt="image" width='100%'
+                  <img src="/stick-ink/images/3D_15 2.svg" alt="image" width='100%'
                   //  style={{ width: '100%' }}
                      />                  
                 </Grid>
                
                 <Grid size={{ xs: 6, md: 6}} >
-                  <img src="/images/3D_13.svg" alt="image" width='100%'
+                  <img src="/stick-ink/images/3D_13.svg" alt="image" width='100%'
                   //  style={{ width: '100%' }} 
                    />
                 </Grid>
 
                 <Grid size={{ xs: 6, md: 6 }}>
-                  <img src="/images/3D_9.svg" alt="image" width='100%'
+                  <img src="/stick-ink/images/3D_9.svg" alt="image" width='100%'
                   //  style={{ width: '100%'}}
                      />
                 </Grid>
@@ -487,7 +487,7 @@ const About = () => {
               </Grid>
 
               <Grid size={{ xs: 12, md: 5 }}>
-                <img src="/images/BMW_M4_2 2.svg" alt="image" width='100%'
+                <img src="/stick-ink/images/BMW_M4_2 2.svg" alt="image" width='100%'
                 //  style={{ width: '100%'}}
                 />
                 

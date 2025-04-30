@@ -213,7 +213,7 @@ const Billing = () => {
                           
                         </Grid>
                     <Grid size={{ xs: 12, md: 10 }} sx={{display:'flex'}} gap={2} >
-                    <img src="/images/ic-security-safety.svg" alt="image" />
+                    <img src="/stick-ink/images/ic-security-safety.svg" alt="image" />
                     <Typography sx={{fontSize:'16px', fontWeight:'600'}} >All your data are safe</Typography>
                           
                         </Grid>

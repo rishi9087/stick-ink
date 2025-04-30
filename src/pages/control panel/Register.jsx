@@ -11,7 +11,7 @@ const AdminRegister = () => {
 
             <Grid container sx={{ display: 'flex', flexDirection:{xs:'column', md:'row'} }} spacing={2} >
                 <Grid item size={{ xs: 12, md: 6 }} sx={{display:{xs:'none', md:'block'}}}>
-                    <img src="/images/Rectangle 57.svg" alt="image" width='100%' />
+                    <img src="/stick-ink/images/Rectangle 57.svg" alt="image" width='100%' />
                 </Grid>
 
                 <Grid container size={{ xs: 12, md: 6}} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} >
@@ -122,7 +122,7 @@ const AdminRegister = () => {
                                     height: 48,
                                     padding:'5px'
                                 }}>
-                                    <img src='/images/facebook-logo.svg' alt='image' width='80%' />
+                                    <img src='/stick-ink/images/facebook-logo.svg' alt='image' width='80%' />
                                 </IconButton>
                                 <IconButton sx={{
                                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -133,7 +133,7 @@ const AdminRegister = () => {
                                     borderRadius: '20%',
                                     padding:'5px'
                                 }}>
-                                    <img src='/images/apple.svg' alt='image' width='80%' />
+                                    <img src='/stick-ink/images/apple.svg' alt='image' width='80%' />
                                 </IconButton>
                                 <IconButton  sx={{
                                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -144,7 +144,7 @@ const AdminRegister = () => {
                                      borderRadius: '20%',
                                     padding:'5px'
                                 }}>
-                                    <img src='/images/google.svg' alt='image' width='70%' />
+                                    <img src='/stick-ink/images/google.svg' alt='image' width='70%' />
                                 </IconButton>
                          
                         </Grid>
