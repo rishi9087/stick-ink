@@ -206,7 +206,7 @@ const About = () => {
 
             <Grid size={{ xs: 12, md: 12 }} mt={2} >
               <video
-                src="/public/images/car-video.mp4"
+                src="/images/car-video.mp4"
                 // autoPlay
                 muted
                 loop

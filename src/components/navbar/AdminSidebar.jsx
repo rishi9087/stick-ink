@@ -21,7 +21,7 @@ const AdminSidebar = () => {
     {/* Logo */}
     <Grid container sx={{display:'flex', justifyContent:'center', alignItems:'center'}} mt={4} >
            
-            <img src="images/stickink-logo2.svg" alt="image" width='60%' />
+            <img src="/images/stickink-logo2.svg" alt="image" width='60%' />
       
     </Grid>
 
@@ -29,22 +29,22 @@ const AdminSidebar = () => {
     <Grid container sx={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}} mt={3}>
         <List>
             <ListItem button sx={{ gap:'10px', cursor:'pointer'}} onClick={()=>handleNavigation('/dashboard')}>
-               <IconButton sx={{backgroundColor:'#FF0000',borderRadius:'30%', justifyContent:'center', width:'25%'}}><img src="images/home-icon.svg" alt="image" width='100%' /></IconButton> 
+               <IconButton sx={{backgroundColor:'#FF0000',borderRadius:'30%', justifyContent:'center', width:'25%'}}><img src="/images/home-icon.svg" alt="image" width='100%' /></IconButton> 
                 <Typography sx={{fontSize:'14px'}}>Dashboard</Typography>
             </ListItem>
 
             <ListItem button sx={{gap:'10px',cursor:'pointer'}} onClick={()=>handleNavigation('/products')  }>
-            <IconButton sx={{backgroundColor:'#FF0000',borderRadius:'30%', justifyContent:'center', width:'25%'}}><img src="images/product-icon.svg" alt="image" width='100%' /></IconButton> 
+            <IconButton sx={{backgroundColor:'#FF0000',borderRadius:'30%', justifyContent:'center', width:'25%'}}><img src="/images/product-icon.svg" alt="image" width='100%' /></IconButton> 
             <Typography  sx={{fontSize:'14px'}}>All Products</Typography>
             </ListItem>
 
             <ListItem button sx={{gap:'10px',cursor:'pointer'}} onClick={()=>handleNavigation('/vehicle')  }>
-            <IconButton sx={{backgroundColor:'#FF0000',borderRadius:'30%', justifyContent:'center', width:'25%'}}><img src="images/vehicle-icon.svg" alt="image" width='100%' /></IconButton> 
+            <IconButton sx={{backgroundColor:'#FF0000',borderRadius:'30%', justifyContent:'center', width:'25%'}}><img src="/images/vehicle-icon.svg" alt="image" width='100%' /></IconButton> 
             <Typography  sx={{fontSize:'14px'}}>Vehicle</Typography>
             </ListItem>
 
             <ListItem button sx={{gap:'10px',cursor:'pointer'}}>
-            <IconButton sx={{backgroundColor:'#FF0000',borderRadius:'30%', justifyContent:'center', width:'25%'}}><img src="images/document-text.svg" alt="image" width='100%' /></IconButton> 
+            <IconButton sx={{backgroundColor:'#FF0000',borderRadius:'30%', justifyContent:'center', width:'25%'}}><img src="/images/document-text.svg" alt="image" width='100%' /></IconButton> 
             <Typography  sx={{fontSize:'14px'}}>Order List</Typography>
             </ListItem>
         </List>

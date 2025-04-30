@@ -58,17 +58,17 @@ function Navbar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton><img src="/public/images/favrt.svg" alt="Logo" className="header-logo" /></IconButton>
+        <IconButton><img src="/images/favrt.svg" alt="Logo" className="header-logo" /></IconButton>
         <p>Favourites</p>
       </MenuItem>
 
       <MenuItem>
-        <IconButton><img src="/public/images/cart.svg" alt="Logo" className="header-logo" /></IconButton>
+        <IconButton><img src="/images/cart.svg" alt="Logo" className="header-logo" /></IconButton>
         <p>Cart</p>
       </MenuItem>
 
       <MenuItem onClick={()=> handleNavigation('/profile') }>
-        <IconButton ><img src="/public/images/profile.svg" alt="Logo" className="header-logo" /></IconButton>
+        <IconButton ><img src="/images/profile.svg" alt="Logo" className="header-logo" /></IconButton>
         <p>Profile</p>
       </MenuItem>
 
@@ -106,7 +106,7 @@ function Navbar() {
            sx={{display: { xs: 'none', md: 'flex' },}} 
           >
 
-            <img src="/public/images/mainlogo.svg" alt="Logo" className="header-logo" />
+            <img src="/images/mainlogo.svg" alt="Logo" className="header-logo" />
           </IconButton>
 
 
@@ -183,7 +183,7 @@ function Navbar() {
             }}
             onClick={() => handleNavigation('/')}
           >
-            <img src="/public/images/mainlogo.svg" alt="Logo" className="header-logo" />
+            <img src="/images/mainlogo.svg" alt="Logo" className="header-logo" />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, }} ml={55}>
             {pages.map((page) => (
@@ -243,9 +243,9 @@ function Navbar() {
               ))}
             </Menu> */}
 
-            <IconButton><img src="/public/images/favrt.svg" alt="Logo" className="header-logo" /></IconButton>
-            <IconButton><img src="/public/images/cart.svg" alt="Logo" className="header-logo" /></IconButton>
-            <IconButton onClick={()=> handleNavigation('/profile') } ><img src="/public/images/profile.svg" alt="Logo" className="header-logo" /></IconButton>
+            <IconButton><img src="/images/favrt.svg" alt="Logo" className="header-logo" /></IconButton>
+            <IconButton><img src="/images/cart.svg" alt="Logo" className="header-logo" /></IconButton>
+            <IconButton onClick={()=> handleNavigation('/profile') } ><img src="/images/profile.svg" alt="Logo" className="header-logo" /></IconButton>
 
           </Box>
 
