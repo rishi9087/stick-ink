@@ -16,7 +16,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import { useNavigate } from 'react-router-dom';
 import { Login } from '@mui/icons-material';
 
-const pages = ['Catalogue', 'About us', `FAQ's`, 'Gallery'];
+const pages = ['Home','Catalogue', 'About us', `FAQ's`, 'Gallery'];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -143,6 +143,9 @@ function Navbar() {
                   <Typography sx={{ textAlign: 'center' }}
                     onClick={() => {
                       handleCloseNavMenu();
+                      if (page === 'Home') {
+                        handleNavigation('/');
+                      }
                       if (page === 'About us') {
                         handleNavigation('/about');
                       }
@@ -188,6 +191,9 @@ function Navbar() {
                 key={page}
                 onClick={() => {
                   handleCloseNavMenu();
+                  if (page === 'Home') {
+                    handleNavigation('/'); // Adjust this path as needed
+                  }
                   if (page === 'About us') {
                     handleNavigation('/about'); // Adjust this path as needed
                   }

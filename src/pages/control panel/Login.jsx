@@ -10,7 +10,7 @@ const AdminLogin = () => {
         <>
 
             <Grid container sx={{ display: 'flex', flexDirection:{xs:'column', md:'row'} }} spacing={2} >
-                <Grid item size={{ xs: 12, md: 6 }} >
+                <Grid item size={{ xs: 12, md: 6 }} sx={{display:{xs:'none', md:'block'}}} >
                     <img src="/images/Rectangle 57.svg" alt="image" width='100%' />
                 </Grid>
 

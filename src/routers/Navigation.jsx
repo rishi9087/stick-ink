@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
 
-
 import Home from '../pages/home/Home';
 import About from '../pages/about/About';
 import Gallery from '../pages/gallery/Gallery';
@@ -11,6 +10,9 @@ import Faq from '../pages/faq/Faq';
 import Billing from '../pages/billing/Billing';
 import AdminRegister from '../pages/control panel/Register';
 import AdminLogin from '../pages/control panel/Login';
+import Dashboard from '../pages/control panel/Dashboard';
+import Products from '../pages/control panel/Products';
+import Vehicle from '../pages/control panel/Vehicle';
 
 const Navigation = () => {
     return (
@@ -26,6 +28,9 @@ const Navigation = () => {
                 <Route path="/billing" element={<Billing />} />
                 <Route path="/adminregister" element={<AdminRegister />} />
                 <Route path="/adminlogin" element={<AdminLogin />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/vehicle" element={<Vehicle />} />
             </Routes>
         </Router>
     );
